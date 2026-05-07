@@ -72,12 +72,14 @@
       margin-bottom: 12px;
     }
 
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: .95;
+  .elegant-name {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(58px, 10vw, 110px);
+      line-height: 1;
       margin: 10px 0 18px;
-      color: #7b552b;
+      color: #8a6233;
+      font-weight: 400;
+      text-shadow: 0 4px 20px rgba(0,0,0,.08);
     }
 
     .script {
@@ -140,12 +142,13 @@
       color: #6d4b2b;
     }
 
-    .divider {
-      width: 120px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      margin: 26px auto;
-    }
+    .ornament {
+    font-size: 28px;
+    letter-spacing: 10px;
+    color: #c29a5b;
+    margin: 24px auto;
+    opacity: .85;
+  }
 
     .countdown {
       display: grid;
@@ -230,7 +233,7 @@
   <header class="hero">
     <div class="card">
       <div class="mini">Celebrando la vida de</div>
-      <h1>Leonor Marañon<br>Boijseauneau</h1>
+      <h1 class="elegant-name">Leonor Marañon<br>Boijseauneau</h1>
       <p class="subtitle">Una tarde especial</p>
       <a class="btn" href="#invitacion">Abrir invitación</a>
     </div>
@@ -238,7 +241,7 @@
 
   <section id="invitacion" class="fade">
     <p class="script">Avec amour</p>
-    <div class="divider"></div>
+    <div class="ornament">✦ ✦ ✦</div>
     <p class="phrase">
       “86 años de historias, cariño y momentos que viven para siempre en nuestros corazones.”
     </p>
