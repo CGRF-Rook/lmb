@@ -235,7 +235,10 @@
       <div class="mini">Celebrando la vida de</div>
       <h1 class="elegant-name">Leonor Marañon<br>Boijseauneau</h1>
       <p class="subtitle">Una tarde especial</p>
-      <a class="btn" href="#invitacion">Abrir invitación</a>
+      <a class="btn" href="#invitacion" onclick="playMusic()">Abrir invitación</a>
+      <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      </audio>
     </div>
   </header>
 
@@ -328,6 +331,10 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+    function playMusic() {
+      const music = document.getElementById("bgMusic");
+      music.play();
+    }
   </script>
 
 </body>
