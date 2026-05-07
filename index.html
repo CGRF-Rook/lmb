@@ -4,167 +4,299 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leonor Marañon Boijseauneau</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --champagne: #f8efe4;
+      --gold: #9b733f;
+      --deep: #2c2118;
+      --rose: #d8a99a;
+      --cream: #fffaf3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Georgia, serif;
-      background: #f7efe5;
-      color: #2b2118;
+      color: var(--deep);
+      background: linear-gradient(180deg, #fff7ef, #f4e4d4);
+      font-family: "Cormorant Garamond", serif;
       text-align: center;
     }
 
     .hero {
       min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
-        url('foto-leonor.png') center/cover no-repeat;
-      color: white;
+      background:
+        linear-gradient(rgba(30,20,15,.35), rgba(30,20,15,.55)),
+        url("foto-leonor.png") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 30px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,.28));
     }
 
     .card {
-      background: rgba(255,255,255,.88);
-      color: #2b2118;
-      padding: 35px 25px;
-      border-radius: 24px;
-      max-width: 650px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      position: relative;
+      width: min(760px, 94%);
+      padding: 48px 34px;
+      border-radius: 34px;
+      background: rgba(255, 250, 243, .82);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.65);
+      box-shadow: 0 30px 90px rgba(0,0,0,.32);
+      animation: fadeUp 1.4s ease both;
+    }
+
+    .mini {
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 42px;
-      margin: 10px 0;
-      color: #7a5730;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: .95;
+      margin: 10px 0 18px;
+      color: #7b552b;
     }
 
-    h2 {
-      font-weight: normal;
-      letter-spacing: 2px;
-      color: #8b6b3f;
+    .script {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(44px, 9vw, 86px);
+      color: var(--rose);
+      margin: 0;
+      font-weight: 400;
     }
 
-    section {
-      padding: 55px 20px;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .phrase {
-      font-size: 24px;
-      font-style: italic;
-      line-height: 1.5;
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
-
-    .timebox {
-      background: #fffaf3;
-      border: 1px solid #d6b97a;
-      border-radius: 16px;
-      padding: 18px;
-      min-width: 90px;
-    }
-
-    .number {
-      font-size: 32px;
-      color: #7a5730;
+    .subtitle {
+      font-size: 25px;
+      margin-top: 12px;
     }
 
     .btn {
       display: inline-block;
-      margin: 12px;
-      padding: 14px 24px;
-      border-radius: 30px;
-      background: #7a5730;
+      margin-top: 24px;
+      padding: 15px 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #8a6233, #c29a5b);
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 19px;
+      box-shadow: 0 12px 28px rgba(80,45,18,.28);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
-    .btn.secondary {
-      background: #2b2118;
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(80,45,18,.36);
     }
 
-    .details {
+    section {
+      padding: 76px 22px;
+      max-width: 980px;
+      margin: auto;
+    }
+
+    .section-card {
+      background: rgba(255,250,243,.82);
+      border: 1px solid rgba(155,115,63,.26);
+      border-radius: 32px;
+      padding: 42px 28px;
+      box-shadow: 0 18px 55px rgba(95,61,34,.13);
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      color: #7b552b;
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 20px;
+    }
+
+    .phrase {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.35;
+      font-style: italic;
+      color: #6d4b2b;
+    }
+
+    .divider {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 26px auto;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .timebox {
       background: #fffaf3;
-      border-radius: 24px;
-      padding: 30px;
-      border: 1px solid #d6b97a;
+      border: 1px solid rgba(155,115,63,.35);
+      border-radius: 22px;
+      padding: 24px 12px;
+    }
+
+    .number {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 6vw, 54px);
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .label {
+      font-size: 18px;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    .details p {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .buttons {
+      margin-top: 26px;
+    }
+
+    .btn.dark {
+      background: linear-gradient(135deg, #2c2118, #6e5130);
     }
 
     footer {
-      padding: 35px;
-      background: #2b2118;
-      color: white;
+      padding: 45px 20px;
+      background: #2c2118;
+      color: #fff3e7;
+      font-size: 22px;
+    }
+
+    .fade {
+      animation: fadeUp 1.1s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .card {
+        padding: 38px 22px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .details p {
+        font-size: 21px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="hero">
+  <header class="hero">
     <div class="card">
-      <h2>Celebrando la vida de</h2>
-      <h1>Leonor Marañon Boijseauneau</h1>
-      <p>Una tarde especial.</p>
+      <div class="mini">Celebrando la vida de</div>
+      <h1>Leonor Marañon<br>Boijseauneau</h1>
+      <p class="subtitle">Una tarde especial</p>
       <a class="btn" href="#invitacion">Abrir invitación</a>
     </div>
-  </div>
+  </header>
 
-  <section id="invitacion">
+  <section id="invitacion" class="fade">
+    <p class="script">Avec amour</p>
+    <div class="divider"></div>
     <p class="phrase">
       “86 años de historias, cariño y momentos que viven para siempre en nuestros corazones.”
     </p>
   </section>
 
-  <section>
-    <h2>Faltan</h2>
-    <div class="countdown">
-      <div class="timebox"><div class="number" id="days">0</div><div>Días</div></div>
-      <div class="timebox"><div class="number" id="hours">0</div><div>Horas</div></div>
-      <div class="timebox"><div class="number" id="minutes">0</div><div>Minutos</div></div>
-      <div class="timebox"><div class="number" id="seconds">0</div><div>Segundos</div></div>
+  <section class="fade">
+    <div class="section-card">
+      <h2>Faltan</h2>
+      <div class="countdown">
+        <div class="timebox">
+          <div class="number" id="days">0</div>
+          <div class="label">Días</div>
+        </div>
+        <div class="timebox">
+          <div class="number" id="hours">0</div>
+          <div class="label">Horas</div>
+        </div>
+        <div class="timebox">
+          <div class="number" id="minutes">0</div>
+          <div class="label">Minutos</div>
+        </div>
+        <div class="timebox">
+          <div class="number" id="seconds">0</div>
+          <div class="label">Segundos</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="details">
+  <section class="fade">
+    <div class="section-card details">
       <h2>Detalles del evento</h2>
-      <p><strong>Fecha:</strong> 30 de Mayo del 2026</p>
-      <p><strong>Hora:</strong> 1:00 PM</p>
-      <p><strong>Lugar:</strong> El Itacate</p>
-      <p>Lomas de Rosales No. 110, Lomas de Rosales, 89100 Tampico, Tamps.</p>
+      <div class="divider"></div>
+      <p><strong>30 de Mayo del 2026</strong></p>
+      <p>1:00 PM</p>
+      <p><strong>El Itacate</strong></p>
+      <p>Lomas de Rosales No. 110, Lomas de Rosales,<br>89100 Tampico, Tamaulipas, México</p>
 
-      <a class="btn secondary" href="https://maps.app.goo.gl/fNBt4K3mGtyUkpq1A" target="_blank">
-        Ver ubicación
+      <div class="buttons">
+        <a class="btn dark" href="https://maps.app.goo.gl/fNBt4K3mGtyUkpq1A" target="_blank">
+          Ver ubicación
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade">
+    <div class="section-card">
+      <h2>Confirmar asistencia</h2>
+      <div class="divider"></div>
+      <p style="font-size:24px;">Tu presencia hará este día aún más especial.</p>
+      <p style="font-size:22px;"><strong>Favor de confirmar antes del 10 de Mayo.</strong></p>
+
+      <a class="btn" target="_blank"
+        href="https://wa.me/528331813346?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Leonor%20Mara%C3%B1on%20Boijseauneau%20el%2030%20de%20Mayo.">
+        Confirmar por WhatsApp
       </a>
     </div>
-  </section>
-
-  <section>
-    <h2>Confirmar asistencia</h2>
-    <p>Tu presencia hará este día aún más especial.</p>
-    <p><strong>Favor de confirmar antes del 10 de Mayo.</strong></p>
-
-    <a class="btn" target="_blank"
-      href="https://wa.me/528331813346?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Leonor%20Mara%C3%B1on%20Boijseauneau%20el%2030%20de%20Mayo.">
-      Confirmar por WhatsApp
-    </a>
-  </section>
-
-  <section>
-    <h2>Galería de recuerdos</h2>
-    <p>Aquí podremos agregar fotos especiales de Leonor.</p>
-    <p>Para la foto principal, guarda una imagen con el nombre:</p>
-    <strong>foto-leonor.png</strong>
   </section>
 
   <footer>
