@@ -235,7 +235,7 @@
       <div class="mini">Celebrando la vida de</div>
       <h2 class="elegant-name">Leonor Marañon<br>Boijseauneau</h2>
       <p class="subtitle">Una tarde especial</p>
-      <a class="btn" href="#invitacion" onclick="playMusic()">Abrir invitación</a>
+      <a class="btn" href="javascript:void(0)" onclick="openInvitation()">Abrir invitación</a>      
       <audio id="bgMusic" loop>
       <source src="music.mp3" type="audio/mpeg">
       </audio>
@@ -331,9 +331,16 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
-    function playMusic() {
+    function openInvitation() {
       const music = document.getElementById("bgMusic");
-      music.play();
+    
+      music.play().catch(error => {
+        console.log("Autoplay bloqueado:", error);
+      });
+    
+      document.getElementById("invitacion").scrollIntoView({
+        behavior: "smooth"
+      });
     }
   </script>
 
