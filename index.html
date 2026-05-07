@@ -351,9 +351,10 @@
       <h1 class="elegant-name">Leonor Marañon<br>Boijseauneau</h1>
       <p class="subtitle">Una tarde especial</p>
       <a class="btn" href="javascript:void(0)" onclick="openInvitation()">Abrir invitación</a>      
-      <audio id="bgMusic" loop>
-      <source src="music.mp3" type="audio/mpeg">
-      </audio>
+      <audio id="bgMusic" loop preload="auto">
+      <source src="./music.mp3?v=1" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
     </div>
   </header>
 
@@ -449,9 +450,21 @@
     function openInvitation() {
       const music = document.getElementById("bgMusic");
     
-      music.play().catch(error => {
-        console.log("Autoplay bloqueado:", error);
-      });
+      music.volume = 0.45;
+      music.load();
+    
+      const playPromise = music.play();
+    
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("Música reproduciendo");
+          })
+          .catch(error => {
+            alert("Toca nuevamente para activar la música.");
+            console.log("El navegador bloqueó la música:", error);
+          });
+      }
     
       document.getElementById("invitacion").scrollIntoView({
         behavior: "smooth"
