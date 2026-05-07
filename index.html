@@ -315,6 +315,34 @@
         opacity: 0;
       }
     }
+
+    .elegant-line {
+      width: min(420px, 70%);
+      height: 1px;
+      margin: 54px auto 34px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(194, 154, 91, 0.35),
+        rgba(194, 154, 91, 0.9),
+        rgba(194, 154, 91, 0.35),
+        transparent
+      );
+      position: relative;
+    }
+    
+    .elegant-line::before {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -54%);
+      background: #fff8f2;
+      color: #c29a5b;
+      font-size: 28px;
+      padding: 0 18px;
+    }
+
     
     @media (max-width: 650px) {
       .card {
@@ -364,6 +392,7 @@
     <p class="phrase">
       “86 años de historias, cariño y momentos que viven para siempre en nuestros corazones.”
     </p>
+    <div class="elegant-line"></div>
   </section>
 
   <section class="fade">
@@ -390,6 +419,8 @@
     </div>
   </section>
 
+  <div class="elegant-line"></div>
+
   <section class="fade">
     <div class="section-card details">
       <h2>Detalles del evento</h2>
@@ -406,6 +437,8 @@
       </div>
     </div>
   </section>
+
+  <div class="elegant-line"></div>
 
   <section class="fade">
     <div class="section-card">
