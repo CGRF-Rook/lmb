@@ -318,29 +318,39 @@
 
     .elegant-line {
       width: min(420px, 70%);
+      height: 28px;
+      margin: 24px auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .elegant-line::before,
+    .elegant-line::after {
+      content: "";
       height: 1px;
-      margin: 54px auto 34px;
+      flex: 1;
       background: linear-gradient(
         90deg,
         transparent,
-        rgba(194, 154, 91, 0.35),
-        rgba(194, 154, 91, 0.9),
-        rgba(194, 154, 91, 0.35),
-        transparent
+        rgba(194, 154, 91, 0.85)
       );
-      position: relative;
     }
     
-    .elegant-line::before {
-      content: "✦";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -54%);
+    .elegant-line::after {
+      background: linear-gradient(
+        90deg,
+        rgba(194, 154, 91, 0.85),
+        transparent
+      );
+    }
+    
+    .elegant-line span {
       color: #c29a5b;
       font-size: 24px;
-      padding: 0;
-      background: transparent;
+      padding: 0 16px;
+      line-height: 1;
     }
 
     
@@ -392,7 +402,7 @@
     <p class="phrase">
       “86 años de historias, cariño y momentos que viven para siempre en nuestros corazones.”
     </p>
-    <div class="elegant-line"></div>
+    <div class="elegant-line"><span>✦</span></div>
   </section>
 
   <section class="fade">
@@ -419,7 +429,7 @@
     </div>
   </section>
 
-  <div class="elegant-line"></div>
+  <div class="elegant-line"><span>✦</span></div>
 
   <section class="fade">
     <div class="section-card details">
@@ -438,7 +448,7 @@
     </div>
   </section>
 
-  <div class="elegant-line"></div>
+  <div class="elegant-line"><span>✦</span></div>
 
   <section class="fade">
     <div class="section-card">
@@ -450,7 +460,7 @@
       <p style="font-size:22px;"><strong>Favor de confirmar antes del 10 de Mayo.</strong></p>
 
       <a class="btn" target="_blank"
-        href="https://wa.me/528333940849?text=Hola%2C%20confirmo%20la%20asistencia%20al%20cumplea%C3%B1os%20de%20Leonor%20Mara%C3%B1on%20Boijseauneau%20el%2030%20de%20Mayo.">
+        href="https://wa.me/528331813346?text=Hola%2C%20confirmo%20la%20asistencia%20al%20cumplea%C3%B1os%20de%20Leonor%20Mara%C3%B1on%20Boijseauneau%20el%2030%20de%20Mayo.">
         Confirmar por WhatsApp
       </a>
     </div>
